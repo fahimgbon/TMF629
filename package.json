@@ -1,0 +1,14 @@
+{
+  "name": "tmf-629",
+  "version": "1.0.0",
+  "description": "TMF 629 Customer Creation Modal",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@slack/bolt": "^3.17.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  }
+}
