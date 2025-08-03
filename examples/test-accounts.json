@@ -1,0 +1,21 @@
+{
+  "testAccounts": [
+    {
+      "name": "Demo Company Inc",
+      "id": "001XX000003DHPh",
+      "description": "Use for standard demos"
+    },
+    {
+      "name": "Acme Corporation", 
+      "id": "001XX000003DHPi",
+      "description": "Use for enterprise demos"
+    }
+  ],
+  "testProducts": [
+    {
+      "name": "Internet Access",
+      "id": "01tXX0000004GvB",
+      "description": "Basic internet service"
+    }
+  ]
+}

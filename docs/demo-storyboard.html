@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMF Slack Integration - Demo Storyboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1d21;
+            color: #d1d2d3;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #4a154b 0%, #36c5f0 100%);
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: white;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .scenario {
+            background: #222529;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #35373b;
+        }
+        .scenario h2 {
+            color: #36c5f0;
+            margin-top: 0;
+        }
+        .timeline {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+        }
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
+            background: #4a154b;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        .act {
+            background: #2c2f33;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 4px solid #36c5f0;
+        }
+        .act-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .act-number {
+            background: #36c5f0;
+            color: #1a1d21;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .slack-command {
+            background: #1a1d21;
+            border: 1px solid #35373b;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Monaco', monospace;
+            margin: 15px 0;
+        }
+        .command {
+            color: #36c5f0;
+            font-weight: bold;
+        }
+        .response {
+            color: #4caf50;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .demo-point {
+            background: rgba(54, 197, 240, 0.1);
+            border: 1px solid #36c5f0;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .demo-point h4 {
+            margin: 0 0 10px 0;
+            color: #36c5f0;
+        }
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .metric {
+            text-align: center;
+            padding: 20px;
+            background: #1a1d21;
+            border-radius: 8px;
+            min-width: 150px;
+            margin: 10px;
+        }
+        .metric-value {
+            font-size: 2.5em;
+            color: #36c5f0;
+            font-weight: bold;
+        }
+        .metric-label {
+            color: #8e9297;
+            margin-top: 5px;
+        }
+        .talking-points {
+            background: #1a1d21;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .talking-points h3 {
+            color: #36c5f0;
+            margin-top: 0;
+        }
+        .talking-points li {
+            margin: 10px 0;
+        }
+        .objection {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid #e74c3c;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .objection h4 {
+            color: #e74c3c;
+            margin: 0 0 10px 0;
+        }
+        .answer {
+            color: #4caf50;
+            font-style: italic;
+        }
+        code {
+            background: #1a1d21;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #36c5f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>TMF API + Slack Integration</h1>
+            <div class="subtitle">Transform Customer Onboarding with Conversational Commerce</div>
+        </div>
+
+        <div class="scenario">
+            <h2>🎬 The Story: "From Days to Minutes"</h2>
+            <p><strong>Setting:</strong> A telecommunications company struggling with slow customer onboarding. Their sales, legal, and operations teams work in silos, using different systems. Customer setup takes 3-5 days with constant email chains and manual data entry.</p>
+            <p><strong>Solution:</strong> TMF APIs integrated with Slack enable real-time collaboration and instant customer setup, all within the tools teams already use daily.</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">👤</div>
+                <h3>Sales Team</h3>
+                <p>Creates customer profile instantly during the call</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">📄</div>
+                <h3>Legal Team</h3>
+                <p>Uploads signed contracts in real-time</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">🔧</div>
+                <h3>Operations</h3>
+                <p>Attaches technical specs and provisions service</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-icon">✅</div>
+                <h3>Customer Live</h3>
+                <p>Complete onboarding in under 10 minutes</p>
+            </div>
+        </div>
+
+        <div class="act">
+            <div class="act-header">
+                <div class="act-number">1</div>
+                <h3>Opening Hook (30 seconds)</h3>
+            </div>
+            <div class="talking-points">
+                <p><strong>Say:</strong> "How long does it take your team to onboard a new enterprise customer? Days? Weeks? What if I told you we could do it in under 10 minutes, without anyone leaving Slack?"</p>
+                <p><strong>Do:</strong> Show Slack workspace with #sales, #legal, and #operations channels</p>
+            </div>
+        </div>
+
+        <div class="act">
+            <div class="act-header">
+                <div class="act-number">2</div>
+                <h3>Customer Creation (2 minutes)</h3>
+            </div>
+            
+            <p><strong>Scenario:</strong> Sarah from Sales just closed a deal with Acme Corporation. She needs to set them up immediately.</p>
+            
+            <div class="slack-command">
+                <div class="command">@sarah: /create-customer</div>
+                <div>→ Modal opens with customer details form</div>
+            </div>
+            
+            <div class="demo-point">
+                <h4>💡 Key Demo Points</h4>
+                <ul>
+                    <li>No context switching - Sarah stays in Slack</li>
+                    <li>Pre-populated account information</li>
+                    <li>Instant creation with Salesforce link</li>
+                    <li>Automatic notification to #customer-onboarding channel</li>
+                </ul>
+            </div>
+            
+            <div class="slack-command">
+                <div class="response">✅ Customer created successfully!<br>
+                Name: Sarah Johnson<br>
+                Customer ID: CUST-2024-001<br>
+                Account: Acme Corporation<br>
+                <br>
+                View in Salesforce: [link]</div>
+            </div>
+        </div>
+
+        <div class="act">
+            <div class="act-header">
+                <div class="act-number">3</div>
+                <h3>Contract Creation (2 minutes)</h3>
+            </div>
+            
+            <p><strong>Scenario:</strong> Legal team receives notification and immediately creates the service agreement.</p>
+            
+            <div class="slack-command">
+                <div class="command">@legal-team: /create-contract-document</div>
+                <div>→ Form auto-populates with Sarah Johnson's information</div>
+            </div>
+            
+            <div class="demo-point">
+                <h4>💡 Key Demo Points</h4>
+                <ul>
+                    <li>Automatic data flow - no re-entering customer info</li>
+                    <li>Contract types: Service Agreement, Warranty, SLA</li>
+                    <li>Term selection (12, 24, 36 months)</li>
+                    <li>Direct link to external contract storage</li>
+                </ul>
+            </div>
+            
+            <div class="slack-command">
+                <div class="response">✅ Contract created!<br>
+                Type: Service Agreement<br>
+                Customer: Sarah Johnson<br>
+                Term: 24 months<br>
+                <br>
+                View Contract: [link]<br>
+                View Customer: [link]</div>
+            </div>
+
+            <div class="objection">
+                <h4>❓ Common Objection: "But we need real agreements, not just documents!"</h4>
+                <p class="answer">Response: "This approach gives you agreement functionality today, without waiting for additional licenses. When you're ready for full TMF651 Agreement Management, the integration is already built - just uncomment the code."</p>
+            </div>
+        </div>
+
+        <div class="act">
+            <div class="act-header">
+                <div class="act-number">4</div>
+                <h3>Document Attachment (2 minutes)</h3>
+            </div>
+            
+            <p><strong>Scenario:</strong> Operations team needs to attach technical specifications and network diagrams.</p>
+            
+            <div class="slack-command">
+                <div class="command">@ops-team: /attach-document</div>
+                <div>→ Form shows last customer (Sarah Johnson) for easy linking</div>
+            </div>
+            
+            <div class="demo-point">
+                <h4>💡 Key Demo Points</h4>
+                <ul>
+                    <li>Smart linking - remembers last customer</li>
+                    <li>Any document type supported</li>
+                    <li>External URL storage (SharePoint, S3, etc.)</li>
+                    <li>Automatic filing in Salesforce</li>
+                </ul>
+            </div>
+            
+            <div class="slack-command">
+                <div class="response">✅ Document created!<br>
+                Name: Network Configuration - Acme Corp<br>
+                Status: PUBLISHED - PRIVATE<br>
+                View Document: [link]<br>
+                <br>
+                Linked to Customer: [link]<br>
+                <em>Check the Files related list on the Account to see this document</em></div>
+            </div>
+        </div>
+
+        <div class="act">
+            <div class="act-header">
+                <div class="act-number">5</div>
+                <h3>The Power Moment (1 minute)</h3>
+            </div>
+            
+            <div class="talking-points">
+                <h3>Show in Salesforce:</h3>
+                <ol>
+                    <li>Navigate to the Account record</li>
+                    <li>Show all documents in the Files related list</li>
+                    <li>Demonstrate the complete audit trail</li>
+                    <li>Show the Timeline of all activities</li>
+                </ol>
+            </div>
+            
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">10min</div>
+                    <div class="metric-label">Total Onboarding Time</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Context Switches</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Data Accuracy</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Teams Collaborated</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scenario">
+            <h2>🔧 Technical Differentiators</h2>
+            <div class="demo-point">
+                <h4>Extensibility Demo (Optional - 2 minutes)</h4>
+                <p>Show <code>/find-products</code> command:</p>
+                <ul>
+                    <li>Dynamic search across any products in the org</li>
+                    <li>Works with custom products</li>
+                    <li>No hardcoded IDs - fully flexible</li>
+                </ul>
+            </div>
+            
+            <div class="demo-point">
+                <h4>Setup Verification (Optional - 1 minute)</h4>
+                <p>Show <code>/check-setup</code> command:</p>
+                <ul>
+                    <li>Real-time API availability check</li>
+                    <li>Clear indicators of what's working</li>
+                    <li>Guidance on enabling additional features</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="talking-points">
+            <h3>🎯 Closing Statement (30 seconds)</h3>
+            <p><strong>"In just 10 minutes, we've shown how TMF APIs plus Slack can transform your customer onboarding. Your teams stay in their flow, data stays accurate, and customers get activated instantly. This isn't the future - it's available today. And as you add more TMF APIs, the integration grows with you."</strong></p>
+        </div>
+
+        <div class="objection">
+            <h4>❓ FAQ: Common Questions & Answers</h4>
+            <p><strong>Q: What if we don't have all the TMF APIs?</strong><br>
+            <span class="answer">A: Start with what you have. TMF629 (Customer) and TMF667 (Documents) work with basic CommsCloud. Add more APIs as you grow.</span></p>
+            
+            <p><strong>Q: How secure is this?</strong><br>
+            <span class="answer">A: All communication uses OAuth 2.0 and encrypted connections. Data stays in Salesforce - Slack is just the interface.</span></p>
+            
+            <p><strong>Q: Can this scale?</strong><br>
+            <span class="answer">A: Absolutely. This uses the same TMF APIs that power enterprise systems. Slack is just making them conversational.</span></p>
+            
+            <p><strong>Q: What about compliance?</strong><br>
+            <span class="answer">A: Full audit trail in Salesforce. Every action is logged with timestamp and user. Perfect for regulated industries.</span></p>
+        </div>
+
+        <div class="scenario">
+            <h2>🚀 Demo Tips for Success</h2>
+            <ul>
+                <li><strong>Prepare:</strong> Create a test account in Salesforce before the demo</li>
+                <li><strong>Personalize:</strong> Use the prospect's company name instead of "Acme"</li>
+                <li><strong>Show Errors:</strong> Demonstrate validation (missing required fields) to show robustness</li>
+                <li><strong>Keep Moving:</strong> If something fails, use backup data from <code>/demo-guide</code></li>
+                <li><strong>End Strong:</strong> Always finish by showing the complete record in Salesforce</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

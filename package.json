@@ -1,14 +1,21 @@
 {
-  "name": "tmf-629",
+  "name": "tmf-slack-integration",
   "version": "1.0.0",
-  "description": "TMF 629 Customer Creation Modal",
+  "description": "TMF API integration with Slack for Salesforce Communications Cloud",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "@slack/bolt": "^3.17.0",
     "axios": "^1.6.0",
     "dotenv": "^16.3.1"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["tmf", "salesforce", "slack", "integration"],
+  "author": "Your Name",
+  "license": "MIT"
 }
